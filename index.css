@@ -8,11 +8,12 @@
   --pink: #ec4899;
   --purple: #8b5cf6;
   --gray: #6b7280;
+  --serenity: #92a8d1;
 }
 
 * {
   background-color: var(--dark1);
-  color: #8b5cf6;
+  color: var(--serenity);
   font-family: "Trispace", sans-serif;
   font-weight: 300;
 }
@@ -34,10 +35,22 @@
   background-color: transparent;
   margin: 1px;
   margin-bottom: 20px;
+  font-weight: 300;
+  font-size: 2.5rem;
+  color: var(--gray);
+}
+.inputdiv {
+  display: -ms-inline-grid;
+
+  background-color: transparent;
 }
 
 .pendingClass,
 .completedClass {
+  padding: 10px;
+
+  background-color: #1f2947;
+  border-radius: 20px;
 }
 
 .pendingtitle,
@@ -58,6 +71,13 @@
 }
 .completebuttonClass,
 .deletebuttonClass {
-  border-radius: 2px;
+  border-radius: 3px;
   color: white;
+  border: 0;
+  margin: 2px;
+  background-color: --serenity;
+  padding: 5px;
+  flex: 1;
+  float: right;
+  cursor: pointer;
 }

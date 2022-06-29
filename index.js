@@ -28,6 +28,19 @@ function removetask(idtodelete) {
     });
 
 }
+
+function removecompletedtask(idtodelete) {
+    completedTasks =
+        completedTasks.filter(function (task) {
+            if (task.id === idtodelete) {
+                return false;
+            } else {
+                return true;
+            }
+        });
+    rendercompleted();
+
+}
 //completetask function
 function movetocomplete(idtocomplete) {
     tasks = tasks.filter(function (task) {
@@ -67,6 +80,13 @@ function delete_task(event) {
     renderpending();
     rendercompleted();
 }
+function delete_completedtask(event) {
+    const idtodelete = event.target.id;
+    removecompletedtask(idtodelete);
+
+    renderpending();
+    rendercompleted();
+}
 
 function completetask(event) {
     const idtocomplete = event.target.id;
@@ -89,7 +109,7 @@ function renderpending() {
         //delete button
         const deletebutton = document.createElement("button");
         deletebutton.innerText = "delete";
-        deletebutton.style = "margin-left:15px";
+
         deletebutton.className = "deletebuttonClass"
 
         deletebutton.onclick = delete_task;
@@ -100,7 +120,7 @@ function renderpending() {
         //complete button
         const completebutton = document.createElement("button");
         completebutton.innerText = "complete";
-        completebutton.style = "margin-left:15px";
+
 
         completebutton.onclick = completetask;
         completebutton.id = task.id;
@@ -120,6 +140,17 @@ function rendercompleted() {
         const element2 = document.createElement("div");
         element2.innerText = tasks.taskname
         element2.className = 'completedClass';
+
+        const deletebutton = document.createElement("button");
+        deletebutton.innerText = "delete";
+
+        deletebutton.className = "deletebuttonClass"
+
+        deletebutton.onclick = delete_completedtask;
+        deletebutton.id = tasks.id;
+
+        element2.appendChild(deletebutton);
+
         const completesection = document.getElementById("completelist");
         completesection.appendChild(element2);
     });
