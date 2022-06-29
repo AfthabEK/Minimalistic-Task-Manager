@@ -1,0 +1,63 @@
+:root {
+  --dark1: #374151;
+  --dark2: #1f2947;
+  --dark3: #111827;
+
+  --light: #eee;
+
+  --pink: #ec4899;
+  --purple: #8b5cf6;
+  --gray: #6b7280;
+}
+
+* {
+  background-color: var(--dark1);
+  color: #8b5cf6;
+  font-family: "Trispace", sans-serif;
+  font-weight: 300;
+}
+.body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+.header {
+  padding: 10px;
+  margin: 5px;
+  color: var(--light);
+  background-color: #1f2947;
+  border-radius: 5px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.titleclass {
+  background-color: transparent;
+  margin: 1px;
+  margin-bottom: 20px;
+}
+
+.pendingClass,
+.completedClass {
+}
+
+.pendingtitle,
+.completedtitle {
+  background-color: transparent;
+}
+
+.pendingdiv,
+.completeddiv {
+  max-width: 1000px;
+  margin: 5px auto;
+  min-height: 100px;
+  font-size: large;
+  background-color: var(--gray);
+
+  border-radius: 5px;
+  padding: 10px;
+}
+.completebuttonClass,
+.deletebuttonClass {
+  border-radius: 2px;
+  color: white;
+}

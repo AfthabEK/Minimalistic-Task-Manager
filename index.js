@@ -83,12 +83,14 @@ function renderpending() {
     tasks.forEach(function (task) {
         //main content
         const element1 = document.createElement("div");
+        element1.className = 'pendingClass';
         element1.innerText = task.taskname
 
         //delete button
         const deletebutton = document.createElement("button");
         deletebutton.innerText = "delete";
         deletebutton.style = "margin-left:15px";
+        deletebutton.className = "deletebuttonClass"
 
         deletebutton.onclick = delete_task;
         deletebutton.id = task.id;
@@ -102,6 +104,7 @@ function renderpending() {
 
         completebutton.onclick = completetask;
         completebutton.id = task.id;
+        completebutton.className = 'completebuttonClass'
 
         element1.appendChild(completebutton);
 
@@ -116,6 +119,7 @@ function rendercompleted() {
     completedTasks.forEach(function (tasks) {
         const element2 = document.createElement("div");
         element2.innerText = tasks.taskname
+        element2.className = 'completedClass';
         const completesection = document.getElementById("completelist");
         completesection.appendChild(element2);
     });

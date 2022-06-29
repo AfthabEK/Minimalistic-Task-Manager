@@ -1,18 +1,35 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>JS program</title>
+    <title>Task manager</title>
+    <link href="index.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;500;700&family=Trispace:wght@100;200;300;500;600;700&display=swap"
+      rel="stylesheet"
+    />
   </head>
 
   <body>
-    <h1>Task Manager</h1>
-    <input id="task" type="text" placeholder="What's the new task?" />
-    <!-- <input id="duedate" type="date" /> -->
-    <button onclick="addtask();">Add task</button>
-    <h3>pending</h3>
-    <div id="tasklist"></div>
-    <h3>complete</h3>
-    <div id="completelist"></div>
+    <header class="header">
+      <h1 class="titleclass">Task Manager</h1>
+      <input id="task" type="text" placeholder="What's the new task?" />
+      <!-- <input id="duedate" type="date" /> -->
+      <button onclick="addtask();">Add task</button>
+    </header>
+
+    <main>
+      <div class="pendingdiv">
+        <div class="pendingtitle">Pending tasks</div>
+        <div id="tasklist" class="tasklistClass"></div>
+      </div>
+
+      <div class="completeddiv">
+        <div class="completedtitle">Completed Tasks</h3>
+        <div id="completelist" class="completelistClass"></div>
+      </div>
+    </main>
     <script src="index.js"></script>
   </body>
 </html>
