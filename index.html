@@ -12,13 +12,17 @@
   </head>
 
   <body>
-    <header class="header">
+    <header>
       <h1 class="titleclass">Task Manager</h1>
       <section class="inputdiv">
-       <input id="task" type="text" placeholder="What's the new task?" />
-       <button onclick="addtask();">Add task</button>
+        <input
+          id="task"
+          type="text"
+          placeholder="What's the new task?"
+          class="inputbox"
+        />
+        <button onclick="addtask();">Add task</button>
       </section>
-       
     </header>
 
     <main>
@@ -28,7 +32,7 @@
       </div>
 
       <div class="completeddiv">
-        <div class="completedtitle">Completed Tasks</h3>
+        <div class="completedtitle">Completed Tasks</div>
         <div id="completelist" class="completelistClass"></div>
       </div>
     </main>

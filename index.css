@@ -10,20 +10,20 @@
   --purple: #8b5cf6;
   --gray: #6b7280;
   --serenity: #92a8d1;
+  --blueizis: #5b5ea6;
 }
 
 * {
-  background-color: var(--dark1);
   color: var(--serenity);
   font-family: "Trispace", sans-serif;
   font-weight: 300;
 }
-.body {
-  display: flex;
-  flex-direction: column;
+body {
+  background-color: var(--dark1);
+
   min-height: 100vh;
 }
-.header {
+header {
   padding: 10px;
   margin: 5px;
   color: var(--light);
@@ -42,43 +42,73 @@
 }
 .inputdiv {
   display: -ms-inline-grid;
-
+  border-radius: 3px;
   background-color: transparent;
 }
 
-.pendingClass,
-.completedClass {
-  padding: 10px;
+.inputbox {
+  border-radius: 5px;
+  padding: 3px;
+  width: 400px;
+}
 
-  background-color: #1f2947;
-  border-radius: 20px;
+.pendingdiv,
+.completeddiv {
+  max-width: 1020px;
+  margin: 5px auto;
+  min-height: 100px;
+  font-size: large;
+  background-color: var(--gray);
+  align-items: center;
+  border-radius: 5px;
+  padding-top: 10px;
 }
 
 .pendingtitle,
 .completedtitle {
   background-color: transparent;
+  margin-bottom: 10px;
+  color: var(--blueizis);
+  padding-left: 10px;
+}
+.tasklistClass {
+  padding-bottom: 15px;
 }
 
-.pendingdiv,
-.completeddiv {
-  max-width: 1000px;
-  margin: 5px auto;
-  min-height: 100px;
-  font-size: large;
-  background-color: var(--gray);
-
-  border-radius: 5px;
+.pendingClass,
+.completedClass {
   padding: 10px;
+  display: flex;
+  background-color: #1f2947;
+  border-radius: 10px;
+  margin: 5px;
+  position: relative;
 }
+
+.pendingClass {
+  margin-left: 10px;
+}
+.completedClass {
+  margin-left: 10px;
+}
+
 .completebuttonClass,
 .deletebuttonClass {
-  border-radius: 3px;
-  color: white;
-  border: 0;
-  margin: 2px;
+  border-radius: 4px;
+  color: var(--blueturquoise);
+  position: absolute;
+
   background-color: --serenity;
-  padding: 5px;
-  flex: 1;
-  float: right;
+  padding: 3px 7px;
+  border: 0;
+  margin: 3px;
   cursor: pointer;
+  top: 5px;
+}
+.deletebuttonClass {
+  right: 7px;
+}
+
+.completebuttonClass {
+  right: 75px;
 }
