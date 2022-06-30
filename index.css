@@ -48,8 +48,18 @@ header {
 
 .inputbox {
   border-radius: 5px;
-  padding: 3px;
+  border: 0;
+  padding: 7px;
   width: 400px;
+  background-color: var(--dark3);
+  font-size: 16;
+}
+
+#submitbutton {
+  background-color: #f7cac9;
+  padding: 5px;
+  border: 0;
+  border-radius: 3px;
 }
 
 .pendingdiv,
@@ -68,7 +78,7 @@ header {
 .completedtitle {
   background-color: transparent;
   margin-bottom: 10px;
-  color: var(--blueizis);
+  color: var(--dark3);
   padding-left: 10px;
 }
 .tasklistClass {
@@ -77,12 +87,13 @@ header {
 
 .pendingClass,
 .completedClass {
-  padding: 10px;
+  padding: 7px 10px;
   display: flex;
   background-color: #1f2947;
   border-radius: 10px;
   margin: 5px;
   position: relative;
+  font-size: 16px;
 }
 
 .pendingClass {
@@ -103,7 +114,7 @@ header {
   border: 0;
   margin: 3px;
   cursor: pointer;
-  top: 7px;
+  top: 2px;
 }
 .deletebuttonClass {
   right: 7px;
