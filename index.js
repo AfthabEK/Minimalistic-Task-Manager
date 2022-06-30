@@ -66,7 +66,22 @@ function movetocomplete(idtocomplete) {
 
 renderpending();
 rendercompleted();
+{
+    const btn = document.getElementById('submitbutton');
 
+    btn.addEventListener('click', function handleClick(event) {
+        // 👇️ if you are submitting a form (prevents page reload)
+        event.preventDefault();
+
+        const taskinput = document.getElementById('task');
+
+        // Send value to server
+        // console.log(taskinput.value);
+
+        // 👇️ clear input field
+        taskinput.value = '';
+    });
+}
 
 
 //CONTROLLER SECTION
