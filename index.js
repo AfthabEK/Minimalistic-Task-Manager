@@ -4,8 +4,15 @@ let tasks = [];
 
 let completedTasks = [];
 
+const savedpending = JSON.parse(localStorage.getItem('pendingtasks'));
+const savedcompleted = JSON.parse(localStorage.getItem('completedtasks'));
 
-
+if (Array.isArray(savedcompleted)) {
+    completedTasks = savedcompleted;
+}
+if (Array.isArray(savedpending)) {
+    tasks = savedpending;
+}
 
 document.querySelector("#task").addEventListener("keyup", event => {
     if (event.key !== "Enter") return; // Use `.key` instead.
@@ -20,7 +27,7 @@ function createtask(task, id) {
 
         id: id,
     });
-
+    savetasks();
 }
 
 //removetask function
@@ -32,7 +39,7 @@ function removetask(idtodelete) {
             return true;
         }
     });
-
+    savetasks();
 }
 
 function removecompletedtask(idtodelete) {
@@ -45,7 +52,7 @@ function removecompletedtask(idtodelete) {
             }
         });
     rendercompleted();
-
+    savetasks();
 }
 //completetask function
 function movetocomplete(idtocomplete) {
@@ -57,15 +64,29 @@ function movetocomplete(idtocomplete) {
             return true;
         }
     });
+    savetasks();
 
 }
 
+
+
+function savetasks() {
+    localStorage.setItem('completedtasks', JSON.stringify(completedTasks));
+    localStorage.setItem('pendingtasks', JSON.stringify(tasks));
+}
 
 
 
 
 renderpending();
 rendercompleted();
+
+
+
+//CONTROLLER SECTION
+
+
+//clearing input after each entry
 {
     const btn = document.getElementById('submitbutton');
 
@@ -84,7 +105,6 @@ rendercompleted();
 }
 
 
-//CONTROLLER SECTION
 function addtask() {
     const textbox = document.getElementById("task");
     if (textbox.value === '') {
