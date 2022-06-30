@@ -7,6 +7,12 @@ let completedTasks = [];
 
 
 
+document.querySelector("#task").addEventListener("keyup", event => {
+    if (event.key !== "Enter") return; // Use `.key` instead.
+    document.querySelector("#submitbutton").click(); // Things you want to do.
+    event.preventDefault(); // No need to `return false;`.
+});
+
 //create task function
 function createtask(task, id) {
     tasks.push({
