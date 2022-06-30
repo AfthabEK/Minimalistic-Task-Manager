@@ -72,11 +72,16 @@ rendercompleted();
 //CONTROLLER SECTION
 function addtask() {
     const textbox = document.getElementById("task");
-    const task = textbox.value;
-    const id = "" + new Date().getTime();
-    createtask(task, id);
-    renderpending();
-    rendercompleted();
+    if (textbox.value === '') {
+        alert("Please enter a valid task")
+    }
+    else {
+        const task = textbox.value;
+        const id = "" + new Date().getTime();
+        createtask(task, id);
+        renderpending();
+        rendercompleted();
+    }
 }
 
 function delete_task(event) {
